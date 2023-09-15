@@ -7,10 +7,23 @@
 }
 
 body {
-	margin: 0;
 	background-color: antiquewhite;
 }
-.container {
+.posterBackground {
+	background-image: url(/background/background2.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.activeLink {
+	color: #ed8936;
+	position: relative;
+}
+.activeLink::before {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	display: block;
 	width: 100%;
-	overflow: hidden;
+	height: 4px;
+	background-color: #ed8936;
 }
