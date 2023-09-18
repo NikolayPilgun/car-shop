@@ -4,7 +4,7 @@ export default function Hero() {
 	return (
 		<section className="w-full flex md:flex-row flex-col justify-between items-center gap-4  my-6 px-8">
 			<div className="flex-[0_1_50%]">
-				<h1 className="mb-8 text-4xl font-medium">
+				<h1 className="mb-8 lg:text-4xl md:text-2xl text-xl font-medium">
 					В автосалоне «Центральный» всегда действуют выгодные спецпредложения
 					на автомобили различных марок.
 				</h1>
@@ -12,11 +12,14 @@ export default function Hero() {
 					С ними вы можете ознакомиться в специальном разделе, а наши менеджеры
 					с радостью ответят на все интересующие вопросы
 				</h3>
-				<p>
-					<CustomButton />
+				<p className="mb-6">
+					<CustomButton
+						title="Подробнее"
+						buttonStyles="bg-cyan-600 text-white"
+					/>
 				</p>
 			</div>
-			<div className="flex-[0_1_50%] w-full posterBackground">
+			<div className="flex-[0_1_50%] posterBackground">
 				<Image
 					src="/logo/logo4.png"
 					width="0"

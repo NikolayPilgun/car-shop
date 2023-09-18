@@ -8,12 +8,12 @@ export default function TheHeader() {
 				<Image
 					src={logoHeader}
 					width={200}
-					height={100}
-					sizes="200px"
+					height={50}
+					sizes="150px"
 					className="w-full h-auto"
 					alt="logoHeader"
 				/>
-				<h2 className="md:text-3xl font-medium w-full max-md:sm:hidden ">
+				<h2 className="md:text-2xl font-medium w-full max-md:sm:hidden ">
 					Car Shop
 				</h2>
 			</div>
