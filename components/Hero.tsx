@@ -14,8 +14,8 @@ export default function Hero() {
 				</h3>
 				<p className="mb-6">
 					<CustomButton
-						title="Подробнее"
-						buttonStyles="bg-cyan-600 text-white"
+						title="Узнать больше"
+						buttonStyles="bg-cyan-600 text-white py-3 px-6"
 					/>
 				</p>
 			</div>

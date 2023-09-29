@@ -5,9 +5,14 @@ import { CustomButtonProps } from "@/types";
 export default function CustomButton({
 	title,
 	buttonStyles,
+	handleClick,
 }: CustomButtonProps) {
 	return (
-		<button type="button" className={`py-3 px-6 outline-none ${buttonStyles}`}>
+		<button
+			type="button"
+			className={`outline-none ${buttonStyles}`}
+			onClick={handleClick}
+		>
 			<span>{title}</span>
 		</button>
 	);
