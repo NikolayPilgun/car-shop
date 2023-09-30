@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import CustomButton from "./CustomButton";
 export default function Hero() {
 	return (
@@ -13,10 +14,12 @@ export default function Hero() {
 					с радостью ответят на все интересующие вопросы
 				</h3>
 				<p className="mb-6">
-					<CustomButton
-						title="Узнать больше"
-						buttonStyles="bg-cyan-600 text-white py-3 px-6"
-					/>
+					<Link href="/aboutUs">
+						<CustomButton
+							title="Узнать больше"
+							buttonStyles="bg-cyan-600 text-white py-3 px-6"
+						/>
+					</Link>
 				</p>
 			</div>
 			<div className="flex-[0_1_50%] posterBackground">

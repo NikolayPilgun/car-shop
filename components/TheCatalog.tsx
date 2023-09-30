@@ -6,13 +6,14 @@ import {
 	dataSearchName,
 } from "@/data/dataSearch";
 import { ICarCard } from "@/types";
-import { getDataCard } from "@/utils";
+import { getCarsPaginate, getDataCard, getFiltrationCars } from "@/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import BodyCards from "./BodyCards";
 import FilterName from "./FilterName";
 import ParameterFilter from "./ParameterFilter";
 let ifFound = true;
+let isClickFilter = false;
 
 export default function TheCatalog() {
 	const [nameFilter, setNameFilter] = useState("");
@@ -28,19 +29,28 @@ export default function TheCatalog() {
 		}${selectedYear && `&year=${selectedYear}`}${
 			selectedBody && `&body=${selectedBody}`
 		}`;
+		if (
+			nameFilter != "" ||
+			carModel != "" ||
+			selectedYear != "" ||
+			selectedBody != ""
+		) {
+			isClickFilter = true;
+			let resCars = await getFiltrationCars(filterParameter);
 
-		//_________________________________________
-		let resCars = await getDataCard(filterParameter);
-
-		if (resCars.length < 1) {
-			ifFound = false;
-		} else {
-			ifFound = true;
+			if (resCars.length < 1) {
+				ifFound = false;
+			} else {
+				ifFound = true;
+			}
+			setCars(resCars);
 		}
-		setCars(resCars);
+	}
+	async function carsPaginate() {
+		const limit = 2;
 
-		// getDataCard(filterParameter).then(setCars);
-		//_________________________________________
+		let resCars = await getCarsPaginate(limit);
+		setCars(resCars);
 	}
 
 	useEffect(() => {
@@ -88,7 +98,7 @@ export default function TheCatalog() {
 				/>
 				<button
 					type="button"
-					className="flex justify-center items-center gap-2 text-white py-2 px-3 bg-cyan-600"
+					className="flex justify-center items-center gap-2 text-white py-2 px-3 bg-cyan-600 hover:bg-cyan-500 transition-all active:scale-95"
 					onClick={filtrationCars}
 				>
 					<span>Фильтр</span>
@@ -102,18 +112,19 @@ export default function TheCatalog() {
 					<h3>По заданным вами параметрам Ничего не найдено</h3>
 				</div>
 			)}
+			<div className="my-5 flex justify-center items-center">
+				{cars.length === 16 || isClickFilter ? (
+					""
+				) : (
+					<button
+						type="button"
+						className="flex justify-center items-center gap-2 text-white py-2 px-3 bg-cyan-600 hover:bg-cyan-500 transition-all active:scale-95"
+						onClick={carsPaginate}
+					>
+						<span>Показать ещё</span>
+					</button>
+				)}
+			</div>
 		</section>
 	);
 }
-
-// {cars.length > 0 ? (
-// 	<div className="w-full grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10  mt-10 mb-11">
-// 		{cars.map((car) => (
-// 			<CarCard key={car.id} car={car} />
-// 		))}
-// 	</div>
-// ) : (
-// 	<div className="w-full h-20 flex justify-center items-center my-16 ">
-// 		<h3>По заданным вами параметрам Ничего не найдено</h3>
-// 	</div>
-// )}

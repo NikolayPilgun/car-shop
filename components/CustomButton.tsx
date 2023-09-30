@@ -10,7 +10,7 @@ export default function CustomButton({
 	return (
 		<button
 			type="button"
-			className={`outline-none ${buttonStyles}`}
+			className={`outline-none hover:bg-cyan-500 transition-all active:scale-95 ${buttonStyles}`}
 			onClick={handleClick}
 		>
 			<span>{title}</span>
