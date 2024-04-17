@@ -1,38 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Header](https://github.com/NikolayPilgun/Portfolio/blob/main/src/data/dataImg/carShop/carShop1.svg)](https://nikolaypilgun.ru/carShop)
 
-## Getting Started
+# Вид сайта — Сайт-визитка. Тема — Магазин по продаже автомобилей.
 
-First, run the development server:
+## Данный сайт создан на основе YouTube-курса (проект является тренировочным).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- [Build and Deploy a Modern Next.js 14 Application](https://www.youtube.com/watch?v=pUNSHPyVryU)
+
+## Технологии:
+
+- [React](https://ru.legacy.reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Json-server](https://github.com/typicode/json-server)
+
+### Требования
+
+Для установки и запуска проекта, необходим:
+
+- [NodeJS](https://nodejs.org/)
+- [json-server](https://www.npmjs.com/package/json-server)
+
+### Установка зависимостей.
+
+Для установки зависимостей выполните команду.
+
+```sh
+ npm i
 ```
 
-json-server
-json-server --watch dataCars.json --port 3004
-json-server
+### Запуск Development сервера.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Чтобы запустить сервер для разработки, выполните команду.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+ npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Запуск json-server сервера.
 
-## Learn More
+Для запуска json-сервера сначала перейдите в папку.
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+cd data
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Запустите json-сервер с помощью команды.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```sh
+npx json-server --watch dataCars.json --port 3004
+```
