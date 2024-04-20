@@ -1,6 +1,6 @@
 [![Header](https://github.com/NikolayPilgun/Portfolio/blob/main/src/data/dataImg/carShop/carShop1.svg)](https://nikolaypilgun.ru/carShop)
 
-# Вид сайта — Сайт-визитка. Тема — Магазин по продаже автомобилей.
+# Тип сайта — Сайт-визитка. Тема — Магазин по продаже автомобилей.
 
 ## Данный сайт создан на основе YouTube-курса (проект является тренировочным).
 
